@@ -1,0 +1,51 @@
+<html>
+    <head>
+	<title> image navigation </title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	 
+	</head>
+	    <body>
+		  
+		    <h1> Image Navigation </h1>
+			
+			<img src = "./images/t1.JPG" height="50%" width="50%" id="myimage" >
+			<br>
+			
+			<input type="button" value = "previous" id = "button1">
+			<input type="button" value = "next" id = "button2">
+			
+		<script type = "text/javascript">
+			document.getElementById("button1").addEventListener("click" , fun1);
+			document.getElementById("button2").addEventListener("click" , fun2);
+			
+			var allimages = ["./images/t1.JPG","./images/t2.JPG","./images/t3.JPG","./images/t4.JPG",
+			"./images/t5.JPG","./images/t6.JPG"];
+			var c = 0;
+			
+			function fun1()
+			{
+			c--;
+			if(c == -1)
+			{
+			c = 0;
+			}
+			var i = document.getElementById("myimage");
+			i.setAttribute("src" , allimages[c]);
+			}
+			
+			function fun2 ()
+			{
+			c++;
+			if(c == allimages.length)
+			{
+			c = allimages.length-1;
+			}
+			var i = document.getElementById("myimage");
+			i.setAttribute("src" , allimages[c]);
+			}
+		</script> 
+		
+		
+		</body>
+
+</html>
